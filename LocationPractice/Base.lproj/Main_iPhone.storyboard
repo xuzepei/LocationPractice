@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="rhM-6k-DJu">
+    <dependencies>
+        <deployment defaultVersion="1536" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+    </dependencies>
+    <scenes>
+        <!--Root Table View Controller - Location Practice-->
+        <scene sceneID="XTf-Ia-DvP">
+            <objects>
+                <tableViewController id="ONi-ak-H1O" customClass="RCRootTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="77k-vM-g0g">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellId" id="LSR-mF-5Jh">
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LSR-mF-5Jh" id="1KN-yg-j2g">
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ONi-ak-H1O" id="CXP-dN-rIF"/>
+                            <outlet property="delegate" destination="ONi-ak-H1O" id="bcB-hh-3gZ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Location Practice" id="2fo-1s-pRO"/>
+                    <connections>
+                        <segue destination="edS-Gd-qEk" kind="push" identifier="si_to_rg" id="AGB-98-qcr"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zQy-OY-YEW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-232" y="-153"/>
+        </scene>
+        <!--View Controller - Reverse Geocoding-->
+        <scene sceneID="5me-8c-4Xh">
+            <objects>
+                <viewController id="edS-Gd-qEk" customClass="RCRGViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Kwa-aS-QV4"/>
+                        <viewControllerLayoutGuide type="bottom" id="mfq-rE-mWb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="j2n-em-3we">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lHG-YW-chj">
+                                <rect key="frame" x="34" y="309" width="252" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AXk-bl-7vP">
+                                <rect key="frame" x="34" y="366" width="252" height="169"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="edS-Gd-qEk" id="57K-Fn-71a"/>
+                                </connections>
+                            </mapView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WUp-HD-ixt">
+                                <rect key="frame" x="34" y="77" width="252" height="140"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="AXk-bl-7vP" secondAttribute="trailing" constant="34" id="CJo-MV-7vD"/>
+                            <constraint firstItem="lHG-YW-chj" firstAttribute="leading" secondItem="j2n-em-3we" secondAttribute="leading" constant="34" id="Jag-g3-j65"/>
+                            <constraint firstAttribute="bottom" secondItem="AXk-bl-7vP" secondAttribute="bottom" constant="30" id="PpZ-AV-UWE"/>
+                            <constraint firstItem="AXk-bl-7vP" firstAttribute="top" secondItem="lHG-YW-chj" secondAttribute="bottom" constant="20" id="TND-aE-SuP"/>
+                            <constraint firstItem="AXk-bl-7vP" firstAttribute="leading" secondItem="j2n-em-3we" secondAttribute="leading" constant="34" id="WiU-9U-vx4"/>
+                            <constraint firstAttribute="trailing" secondItem="WUp-HD-ixt" secondAttribute="trailing" constant="34" id="aOc-0B-zDy"/>
+                            <constraint firstItem="WUp-HD-ixt" firstAttribute="top" secondItem="j2n-em-3we" secondAttribute="top" constant="77" id="aly-50-ysu"/>
+                            <constraint firstAttribute="trailing" secondItem="lHG-YW-chj" secondAttribute="trailing" constant="34" id="lx0-CW-0av"/>
+                            <constraint firstItem="WUp-HD-ixt" firstAttribute="leading" secondItem="j2n-em-3we" secondAttribute="leading" constant="34" id="wC1-fh-jZW"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Reverse Geocoding" id="Y9R-OH-gYt"/>
+                    <connections>
+                        <outlet property="label" destination="lHG-YW-chj" id="zzB-2Q-3JP"/>
+                        <outlet property="mapView" destination="AXk-bl-7vP" id="J3K-CV-Fty"/>
+                        <outlet property="textView" destination="WUp-HD-ixt" id="bnG-ly-K3Y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zLH-0q-bpG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="233" y="-613"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="an4-Mw-Xks">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="rhM-6k-DJu" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VU1-Oe-3s7">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="ONi-ak-H1O" kind="relationship" relationship="rootViewController" id="CBw-h7-gVV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8cP-7g-4zR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-736" y="-51"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
